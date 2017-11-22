@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Viwe Mgoduka</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <style>
     body {
       width: 100%;
@@ -64,7 +64,7 @@
     window.onload = function() {
     	canvas = document.getElementById('gameCanvas');
     	canvasContext = canvas.getContext('2d');
-      canvasContext.font = "30px Robot Mono";
+      canvasContext.font = "30px Press Start 2P";
 
     	var framesPerSecond = 30;
     	setInterval(function() {
@@ -155,13 +155,13 @@
 
       if (showingWinScreen) {
         if (player1Score >= WINNING_SCORE){
-          canvasContext.fillText("Left Player Won !",350,200);
+          canvasContext.fillText("Left Player Won !",150,200);
         }
         else if (player2Score >= WINNING_SCORE){
-          canvasContext.fillText("Right Player Won !",350,200);
+          canvasContext.fillText("Right Player Won !",150,200);
         }
 
-        canvasContext.fillText("Click to continue",350,400);
+        canvasContext.fillText("Click to continue",150,400);
         return;
       }
 
