@@ -13,6 +13,7 @@
     canvas {
       display: block;
       margin: 0 auto;
+      border: 2px solid black;
     }
   </style>
 </head>
@@ -137,15 +138,15 @@
 
     function drawNet() {
       for (var i=0; i<canvas.height; i+=40) {
-        colorRect(canvas.width/2-1,i,2,20,'white');
+        colorRect(canvas.width/2-1,i,2,20,'black');
       }
     }
 
     function drawEverything() {
 
     	// next line blanks out the screen with black
-    	colorRect(0,0,canvas.width,canvas.height,'black');
-      canvasContext.fillStyle = 'white';
+    	colorRect(0,0,canvas.width,canvas.height,'whitesmoke');
+      canvasContext.fillStyle = 'black';
 
       if (showingWinScreen) {
         if (player1Score >= WINNING_SCORE){
@@ -162,13 +163,13 @@
       drawNet();
 
     	// this is left player paddle
-    	colorRect(0,paddle1Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'white');
+    	colorRect(0,paddle1Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'black');
 
       // this is right player paddle
-    	colorRect(canvas.width-PADDLE_THICKNESS,paddle2Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'white');
+    	colorRect(canvas.width-PADDLE_THICKNESS,paddle2Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'black');
 
     	// next line draws the ball
-    	colorCircle(ballX, ballY, 10, 'white');
+    	colorCircle(ballX, ballY, 10, 'black');
 
       //Score board
       canvasContext.fillText(player1Score,100,100);
