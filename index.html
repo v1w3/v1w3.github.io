@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Viwe Mgoduka</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   <style>
     body {
       width: 100%;
@@ -64,6 +64,7 @@
     window.onload = function() {
     	canvas = document.getElementById('gameCanvas');
     	canvasContext = canvas.getContext('2d');
+      canvasContext.font = "30px Robot Mono";
 
     	var framesPerSecond = 30;
     	setInterval(function() {
@@ -91,10 +92,10 @@
 
     function computerMovement() {
       var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2);
-      if(paddle2YCenter < ballY-35) {
-        paddle2Y += 6;
-      } else if(paddle2YCenter > ballY-35) {
-        paddle2Y -=6;
+      if(paddle2YCenter < ballY-25) {
+        paddle2Y += 10;
+      } else if(paddle2YCenter > ballY-25) {
+        paddle2Y -=10;
       }
     }
 
@@ -113,7 +114,7 @@
              ballSpeedX = -ballSpeedX;
 
              var deltaY = ballY - (paddle1Y+PADDLE_HEIGHT/2);
-             ballSpeedY = deltaY * 0.35;
+             ballSpeedY = deltaY * 0.25;
            } else {
              player2Score ++; //Must be BEFORE ballReset()
              ballReset();
@@ -125,7 +126,7 @@
              ballSpeedX = -ballSpeedX;
 
              var deltaY = ballY - (paddle2Y+PADDLE_HEIGHT/2);
-             ballSpeedY = deltaY * 0.35;
+             ballSpeedY = deltaY * 0.25;
            } else {
              player1Score ++; //Must be BEFORE ballReset()
              ballReset();
@@ -150,6 +151,7 @@
     	// next line blanks out the screen with black
     	colorRect(0,0,canvas.width,canvas.height,'white');
       canvasContext.fillStyle = 'black';
+      
 
       if (showingWinScreen) {
         if (player1Score >= WINNING_SCORE){
